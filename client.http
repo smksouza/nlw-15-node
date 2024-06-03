@@ -16,5 +16,8 @@ Content-Type: application/json
     "email": "rowena2@gmail.com"
 }
 
-####
+###
 GET http://localhost:3333/events/34c91ad3-4dd0-4117-b3e6-7b37930ce526
+
+###
+GET http://localhost:3333/attendees/3/badge
