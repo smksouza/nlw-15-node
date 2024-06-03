@@ -2,7 +2,19 @@ POST http://localhost:3333/events
 Content-Type: application/json
 
 {
-    "title": "Unite Summit",
-    "details": "Um evento para quem é apaixonado por programação",
-    "maximumAttendees": 150
+    "title": "Novo evento 2",
+    "details": null,
+    "maximumAttendees": 1
 }
+
+###
+POST http://localhost:3333/events/34c91ad3-4dd0-4117-b3e6-7b37930ce526/attendees
+Content-Type: application/json
+
+{
+    "name": "Rowena",
+    "email": "rowena2@gmail.com"
+}
+
+####
+GET http://localhost:3333/events/34c91ad3-4dd0-4117-b3e6-7b37930ce526
