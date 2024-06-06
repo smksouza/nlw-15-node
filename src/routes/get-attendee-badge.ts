@@ -8,6 +8,8 @@ export async function getAttendeeBadge(app: FastifyInstance){
     .withTypeProvider<ZodTypeProvider>()
     .get('/attendees/:attendeeId/badge', {
         schema: {
+            summary: 'Get an attendee badge',
+            tags: ['attendees'],
             params: z.object({
                 attendeeId: z.coerce.number().int(),
             }),
@@ -41,7 +43,7 @@ export async function getAttendeeBadge(app: FastifyInstance){
         })
 
         if(attendee === null) {
-            throw new Error('Attende not found.')
+            throw new Error('Attendee not found.')
         }
 
         const baseURL = `${request.protocol}://${request.hostname}`

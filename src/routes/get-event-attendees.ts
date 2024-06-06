@@ -8,6 +8,8 @@ export async function getEventAttendees(app: FastifyInstance){
     .withTypeProvider<ZodTypeProvider>()
     .get('/events/:eventId/attendees', {
         schema: {
+          summary: 'Get event attendees',
+          tags: ['events'],
             params: z.object({
                 eventId: z.string().uuid(),
             }),
@@ -65,7 +67,7 @@ export async function getEventAttendees(app: FastifyInstance){
           return {
             id: attendee.id,
             name: attendee.name,
-            email: attendee.name,
+            email: attendee.email,
             createdAt: attendee.createdAt,
             checkedIn: attendee.CheckIn?.createdAt ?? null,
           }
